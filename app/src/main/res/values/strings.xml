@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">PizzaOrderingApp</string>
+    <string name="app_name">Pizza Spot</string>
+    <string name="your_cart_is_empty">Your cart is empty</string>
 </resources>

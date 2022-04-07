@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/topLay"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_1"
+                android:layout_marginTop="@dimen/margin_4"
+                android:layout_marginEnd="@dimen/margin_1"
+                android:background="@drawable/circle_mark_red"
+                android:padding="@dimen/margin_1"
+                android:src="@drawable/ic_baseline_arrow_back_ios" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_4"
+                android:layout_toEndOf="@+id/back"
+                android:text="Finalise cart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/xxlarge_text_size"
+                android:textStyle="italic" />
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <androidx.core.widget.NestedScrollView
+        android:visibility="visible"
+        android:id="@+id/scrollable"
+        android:layout_above="@+id/checkout"
+        android:layout_below="@+id/topLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:padding="@dimen/margin_1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cartItems"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_marginTop="@dimen/margin_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dl_state_id_wh"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/navigation_width"
+            android:layout_height="@dimen/progress_bar_wh"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_1"
+            android:gravity="center"
+            android:src="@drawable/ic_emptycart_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/your_cart_is_empty"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/large_margin"
+            tools:ignore="SpUsage" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+
+        android:layout_alignParentBottom="true"
+        android:text="Checkout"
+        android:id="@+id/checkout"
+        android:background="@drawable/buttonshape"
+        android:textColor="@color/white"
+        android:layout_marginBottom="@dimen/margin_2"
+        android:layout_marginTop="@dimen/margin_2"
+        android:layout_marginRight="@dimen/margin_4"
+        android:layout_marginLeft="@dimen/margin_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
